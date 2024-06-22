@@ -8,7 +8,11 @@ describe("GET /", () => {
     expect(response.statusCode).toBe(200);
   });
 
-  afterAll((done) => {
-    server.close(done);
+  afterAll(() => {
+    return new Promise((resolve) => {
+      server.close(() => {
+        resolve();
+      });
+    });
   });
 });
