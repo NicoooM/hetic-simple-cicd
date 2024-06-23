@@ -45,4 +45,4 @@ jobs:
             cd ~/hetic-simple-cicd &&
             git pull origin main &&
             npm install &&
-            pm2 restart app || pm2 start index.js --name app
+            pm2 reload app || pm2 start index.js -i max --name app
